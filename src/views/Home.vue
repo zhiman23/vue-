@@ -8,11 +8,11 @@
         text-color="#fff"
         active-text-color="#ffd04b"
       >
-        <el-menu-item index="2">
+        <el-menu-item index="2" @click="$router.push('/postlist')">
           <i class="el-icon-menu"></i>
           <span slot="title">文章列表</span>
         </el-menu-item>
-        <el-menu-item index="4">
+        <el-menu-item index="4" @click="$router.push('/editpost')">
           <i class="el-icon-setting"></i>
           <span slot="title">发表文章</span>
         </el-menu-item>
@@ -20,7 +20,9 @@
     </el-aside>
     <el-container class="container">
       <el-header>头部内容</el-header>
-      <el-main class="main">主要内容</el-main>
+      <el-main class="main">
+        <router-view></router-view>
+      </el-main>
     </el-container>
   </el-container>
 </template>
