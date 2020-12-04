@@ -8,10 +8,14 @@ import EditPost from '../views/EditPost.vue'
 Vue.use(VueRouter)
 
 const routes = [
-  { path: '/', name: 'Home', component: Home },
+  {
+    path: '/', name: 'Home', component: Home, children: [
+      { path: '/postlist', component: PostList },
+      { path: '/editpost', component: EditPost }
+    ]
+  },
   { path: '/login', component: Login },
-  { path: '/postlist', component: PostList },
-  { path: '/editpost', component: EditPost }
+
 
 ]
 
