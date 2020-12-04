@@ -8,11 +8,17 @@
         text-color="#fff"
         active-text-color="#ffd04b"
       >
-        <el-menu-item index="2" @click="$router.push('/postlist')">
+        <el-menu-item
+          index="2"
+          @click="$router.push('/postlist').catch(() => {})"
+        >
           <i class="el-icon-menu"></i>
           <span slot="title">文章列表</span>
         </el-menu-item>
-        <el-menu-item index="4" @click="$router.push('/editpost')">
+        <el-menu-item
+          index="4"
+          @click="$router.push('/editpost').catch(() => {})"
+        >
           <i class="el-icon-setting"></i>
           <span slot="title">发表文章</span>
         </el-menu-item>
@@ -56,8 +62,8 @@ export default {};
 .main {
   background-color: #e9eef3;
   color: #333;
-  text-align: center;
-  line-height: 160px;
+  // text-align: center;
+  // line-height: 160px;
 }
 
 body > .el-container {
