@@ -18,15 +18,20 @@
           <img
             v-if="scope.row.cover.length > 0"
             class="thumbanail"
-            :src="scope.row.cover[0].url"
+            :src="scope.row.cover[0].url | fixImgUrl"
             alt=""
           />
           <img v-else class="thumbanail" src="@/assets/logo.png" alt="" />
         </template>
       </el-table-column>
       <el-table-column label="操作" width="100">
-        <template>
-          <el-button size="small" type="warning">编辑</el-button>
+        <template slot-scope="scope">
+          <el-button
+            size="small"
+            type="warning"
+            @click="$router.push('/editpost?id=' + scope.row.id)"
+            >编辑</el-button
+          >
         </template>
       </el-table-column>
     </el-table>
